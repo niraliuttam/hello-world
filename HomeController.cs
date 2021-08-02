@@ -3,11 +3,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
-using ApplebiteMobiles_App.Models;
+using 2.Models;
 
-namespace ApplebiteMobiles_App.Controllers
+namespace 2.1
 {
-    public class HomeController : Controller
+    public class a : a
     {
         appleEntities ad = new appleEntities();
         public ActionResult Index()
