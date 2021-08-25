@@ -1,0 +1,62 @@
+﻿@model IEnumerable<ApplebiteMobiles_App.Models.ProcCurrentOffersSelectSP_Result>
+
+@{
+    ViewBag.Title = "CurrentOffer";
+    Layout = "~/Views/Shared/_admn.cshtml";
+}
+<div id="contact" class="contact" style="padding-top:60px;">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="title">
+                    <h2>Current<strong class="black"> Offers</strong></h2>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-xl-8 col-lg-8 col-md-8 col-sm-12 padding">
+            <table class="table">
+                <tr>
+                    <th>
+                        OfferName
+                    </th>
+                    <th>
+                        OfferDescription
+                    </th>
+                    <th>
+                        OfferPrice
+                    </th>
+                    <th>
+                        OfferImage
+                    </th>
+                    <th>Action</th>
+                </tr>
+
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.OfferName)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.OfferDescription)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.OfferPrice)
+                        </td>
+                        <td>
+                            <img src="~/img/CurrentOffers/@Html.DisplayFor(modelItem => item.OfferImage)" style="height:100px;width:180px;" />
+                        </td>
+                        <td>
+                            @Html.ActionLink("Edit", "EditCurrentOffer_Master", new { id = item.OfferDetailsID })
+                    </td>
+                </tr>
+                }
+
+            </table>
+        </div>
+    </div>
+</div>

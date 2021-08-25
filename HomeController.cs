@@ -3,18 +3,18 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
-using 2.Models;
+using ApplebiteMobiles_App.Models;
 
-namespace 2.1
+namespace ApplebiteMobiles_App.Controllers
 {
-    public class a : a
+    public class HomeController : Controller
     {
         appleEntities ad = new appleEntities();
         public ActionResult Index()
         {
-            return View();
+            List<ProcCurrentOffersSelectSP_Result> ar = ad.ProcCurrentOffersSelectSP().ToList();
+            return View(ar);
         }
-
         public ActionResult About()
         {
             ViewBag.Message = "Your About page.";

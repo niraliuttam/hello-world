@@ -1,0 +1,176 @@
+﻿@model ApplebiteMobiles_App.Models.tblUser
+@{
+    ViewBag.Title = "Admin Login";
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Login</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- mobile metas -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1">
+    <!-- site metas -->
+    <title>Applebite Mobiles</title>
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <!-- bootstrap css -->
+    <link rel="stylesheet" href="~/Content/css/bootstrap.min.css">
+    <!-- owl css -->
+    <link rel="stylesheet" href="~/Content/css/owl.carousel.min.css">
+    <!-- style css -->
+    <link rel="stylesheet" href="~/Content/css/style.css">
+    <!-- responsive-->
+    <link rel="stylesheet" href="~/Content/css/responsive.css">
+    <!-- awesome fontfamily -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body class="main-layout">
+    <div class="wrapper">
+        <!-- end loader -->
+
+        <div id="content">
+            <!-- header -->
+            <header>
+                <!-- header inner -->
+                <div class="head-top">
+                    <div class="container">
+
+                        <div class="row">
+                            <div class="col-xl-4 col-lg-4 col-md-4 col-sm-4">
+                                <div class="email">
+                                    @*<a href="mailto:info@applebitemobile.com"><img src="~/Content/images/mail_icon.png" /> Email : info@applebitemobile.com</a>*@
+                                    &nbsp;
+                                </div>
+                            </div>
+                            <div class="col-xl-4 col-lg-4 col-md-4 col-sm-4">
+                                <div class="logo">
+                                    <a href="#"><img src="~/Content/images/logo.png" /></a>
+                                </div>
+                            </div>
+                            <div class="col-xl-4 col-lg-4 col-md-4 col-sm-4">
+                                <div class="contact_nu">
+                                    @*<a href="Phone:7567416161"> <img src="~/Content/images/phone_icon.png" /> Contact : (+91) 75 674 16 161</a>*@
+                                    &nbsp;
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="bg">
+                    <div class="container">
+                        <nav class="navigation navbar-expand-md  navbar-dark ">
+                            <div class="collapse navbar-collapse" id="navbarsExample04">
+                                <ul class="navbar-nav mr-auto">
+                                    <li class="nav-item active">&nbsp; @*<a class="nav-link" href="~/Home/Index">Login <span class="sr-only">(current)</span></a>*@ </li>
+                                </ul>
+                            </div>
+                        </nav>
+                    </div>
+                </div>
+                <!-- end header inner -->
+            </header>
+
+
+
+            <div class="slider_section banner_main">
+                <div id="myCarousel" class="carousel slide" data-ride="carousel">
+                    <div class="carousel-inner">
+                        <div class="carousel-item active">
+                            <div class="container">
+                                <div class="carousel-caption relative">
+                                    <h1>&nbsp;<br />&nbsp;
+                                    </h1>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="contact" class="contact">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="title">
+                                <center><h2>Login</h2></center>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="container-fluid">
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    <div class="row">
+        <div class="col-xl-3 col-lg-3 col-md-3 col-sm-12 padding">&nbsp;</div>
+        <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12">
+            <div class="form-horizontal">
+                <center>
+                    <p style="color:red;font-weight:bold;">@ViewBag.Message</p>
+                    <br />
+                    <div class="form-group">
+                        <div class="col-md-12">
+                            <label>User Name : </label>
+                            @*@Html.EditorFor(model => model.UserName, new { htmlAttributes = new { @class = "form-control" } })*@
+                            @Html.EditorFor(model => model.UserName)
+                            @Html.ValidationMessageFor(model => model.UserName, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-md-12">
+                            <label>Password :  </label>
+                            @*@Html.PasswordFor(model => model.Password, new { htmlAttributes = new { @class = "form-control"}})*@
+                            @*@Html.PasswordFor(model => model.Password, new { @class = "form-control" })*@
+                            @Html.PasswordFor(model => model.Password)
+                            @Html.ValidationMessageFor(model => model.Password, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-md-offset-2 col-md-10">
+                            <input type="submit" value="Login" class="btn btn-default" />
+                        </div>
+                    </div>
+                </center>
+            </div>
+        </div>
+        <div class="col-xl-3 col-lg-3 col-md-3 col-sm-12 padding">&nbsp;</div>
+    </div>
+}
+            </div>
+            <footer>
+                <div class="footer">
+                    <div class="copyright">
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12">
+                                    <center>
+                                        <hr />
+                                        <a href="http://www.cscomsoft.com" target="_blank">Copyright ©. All rights reserved. | Designed by C.S.Comsoft Pvt. Ltd.</a>
+                                    </center>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </footer>
+            <!-- end footer -->
+        </div>
+    </div>
+    <div class="overlay"></div>
+
+    <!-- Javascript files-->
+    <script src="~/Content/js/jquery.min.js"></script>
+    <script src="~/Content/js/popper.min.js"></script>
+    <script src="~/Content/js/bootstrap.bundle.min.js"></script>
+    <script src="~/Content/js/owl.carousel.min.js"></script>
+    <script src="~/Content/js/custom.js"></script>
+    <script src="~/Content/js/jquery.mCustomScrollbar.concat.min.js"></script>
+</body>
+</html>
